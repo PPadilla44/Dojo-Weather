@@ -23,7 +23,7 @@
                 <h2>San Jose</h2>
                     <div class="show-temp">
                     <label for="temperature-scale">show temperature in </label>
-                    <select name="temperature-scale" id="temperature-scale">
+                    <select name="temperature-scale" onchange="setTemp(this)">
                         <option>°F</option>
                         <option>°C</option>
                     </select>

@@ -4,45 +4,41 @@ var cities = document.querySelectorAll(".cities h3");
 var cookie = document.getElementById("cookies");
 
 var lowTemp = document.querySelectorAll(".low");
-var highTemp = document.querySelectorAll(".high")
+var highTemp = document.querySelectorAll(".high");
+var fLowTemp = [];
+var fHighTemp = [];
+var cLowTemp = [];
+var cHighTemp = [];
+
+for(let i = 0; i < lowTemp.length; i++) {
+    cLowTemp.push(Math.floor(convertTemp(parseInt(lowTemp[i].innerHTML))) + "°"); 
+    cHighTemp.push(Math.floor(convertTemp(parseInt(highTemp[i].innerHTML)))+ "°");
+    fHighTemp.push(highTemp[i].innerHTML);
+    fLowTemp.push(lowTemp[i].innerHTML);
+}
+
+function setTemp(element) {
+    if(element.value == "°C") {
+        for(let i = 0; i < fLowTemp.length; i++) {
+            lowTemp[i].innerHTML = cLowTemp[i];
+            highTemp[i].innerHTML = cHighTemp[i];
+        }
+    } else if(element.value == "°F") {
+        for(let i = 0; i < fLowTemp.length; i++){
+            lowTemp[i].innerHTML = fLowTemp[i];
+            highTemp[i].innerHTML = fHighTemp[i];
+        }
+    }
+}
+
+function convertTemp(value) {
+        return (value - 32) * (5/9);
+}
 
 
 function alertCity(index) {
-        alert("Loading " + cities[index].innerHTML + " Weather Report")
+    alert("Loading " + cities[index].innerHTML + " Weather Report");
 }
 function hideCookie() {
-    cookie.style.visibility = "hidden"
-}
-
-
-
-function showTemp(){
-
-    if(isFahrenheit) {
-        for(let i = 0; i < lowTemp.length; i++) {
-            var fNum = parseInt(lowTemp[i].innerHTML);
-            var cNum = convertTemp("farenheit", fNum);
-            lowTemp[i].innerHTML = Math.floor(cNum) + "°";
-            var fNum = parseInt(highTemp[i].innerHTML);
-            var cNum = convertTemp("farenheit", fNum);
-            highTemp[i].innerHTML = Math.floor(cNum) + "°";
-        }
-    } else {
-        for(let i = 0; i < lowTemp.length; i++) {
-            var cNum = parseInt(lowTemp[i].innerHTML);
-            var fNum = convertTemp("celsius", cNum);
-            lowTemp[i].innerHTML = Math.floor(fNum) + "°";
-            var cNum = parseInt(highTemp[i].innerHTML);
-            var fNum = convertTemp("celsius", cNum);
-            highTemp[i].innerHTML = Math.floor(fNum) + "°";
-        }
-    }
-}
-
-function convertTemp(centigrade, value) {
-    if(centigrade == "farenheit"){
-        return (value - 32) * (5/9);
-    } else if (centigrade == "celsius"){
-        return (value * (9/5)) + 34;
-    }
+    cookie.style.visibility = "hidden";
 }
