@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+}
+p, label{
+    font-weight: bold;
+}
+img{
+    height: 100px;
+    border-radius: 50%;
+}
+.nav{
+    background-color: #9FC5F8;
+    display: flex;
+    height: 80px;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    font-size: larger;
+    font-weight: bold;
+}
+.cities{
+    display: flex;
+    justify-content: space-evenly;
+    font-weight: lighter;
+}
+.cities h3 {
+    margin: 0px 25px;
+    cursor: pointer;
+
+}
+.content{
+    display: flex;
+    height: 500px;
+    justify-content: center;
+}
+.left-banner, .right-banner {
+    flex: 1;
+}
+.main {
+    flex: 6;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid black;
+    border-radius: 10%;
+    padding: 15px 0px;
+}
+select{
+    cursor: pointer;
+}
+
+.weather-block{
+    display: flex;
+    margin-top: 20px;
+    justify-content: space-evenly;
+    height: 300px;
+}
+.day-block{
+    background-color: rgb(228, 228, 228);
+    margin: 0px 5px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.temp {
+    display: flex;
+    margin-top: 5px;
+    width: 125px;
+    justify-content: space-between;
+
+}
+.high{
+    color: red;
+}
+.low {
+    color: #1d7dfa;
+}
+.cookies{
+    display: flex;
+    align-items: center;
+    border: 3px solid black;
+    padding: 5px 10px;
+    background-color: rgb(228, 228, 228);
+    position: fixed;
+    bottom: 20px;
+
+}
+.cookies img{
+    height: 75px;
+}
+.cookie-time{
+    display: block;
+    font-weight: bolder;
+}
+.cookies p {
+    width: 500px;
+    font-weight: normal;
+    margin: 0px 20px
+}
+
+button {
+    background-color: #9FC5F8;
+    border: 3px solid black;
+    padding: 2px;
+    box-shadow: 2px 2px 2px black;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
