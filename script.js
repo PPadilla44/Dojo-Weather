@@ -36,8 +36,8 @@ function convertTemp(value) {
 }
 
 
-function alertCity(index) {
-    alert("Loading " + cities[index].innerHTML + " Weather Report");
+function alertCity(element) {
+    alert("Loading " + element.innerHTML + " Weather Report...");
 }
 function hideCookie() {
     cookie.style.visibility = "hidden";
